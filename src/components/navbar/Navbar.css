@@ -1,0 +1,30 @@
+/* #F7F6FF */
+.avatarAndNotificationContainer {
+	@apply flex  gap-4 items-center;
+}
+
+.notification {
+	@apply flex w-[40px] aspect-square rounded-full bg-[#F7F6FF] relative;
+}
+
+.notification {
+	> svg {
+		@apply m-auto;
+	}
+
+	> .dot {
+		@apply absolute -top-1 right-0;
+	}
+}
+
+.avatarContainer {
+	@apply flex items-center gap-2;
+}
+.avatarContainer {
+	> h1 {
+		color: #262626;
+	}
+}
+.avatar {
+	@apply w-9 h-9 rounded-full overflow-hidden;
+}

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Brand Color #0341A7; */
+/* Background Color #F6F6F6 */
+/* Text Color #262626 */
+/* Table Head Bar Color #F0F4FE */
+/* Table Head Text Color #595959 */
+/* Icon Color #9B9FAB */
+/* Icon Notification Color #FF3D3D */
+/* Borde color #CDCFD4 */
+
+/* font-family: "Roboto Mono", monospace; */
+
+/* font-family: "Raleway", sans-serif; */
+
+/* font-family: "Montserrat", sans-serif; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+	font-family: "Montserrat", sans-serif;
+	@apply bg-[#F6F6F6];
+}
+
+.border {
+	border: 1px solid #cdcfd4;
+}
