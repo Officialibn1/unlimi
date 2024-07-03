@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TableImage from "../../assets/TableImage.png";
 
 const ImageCell = ({ value, sku }: { value: string; sku: string }) => {

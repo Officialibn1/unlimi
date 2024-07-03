@@ -2,7 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Checkbox } from "../ui/checkbox";
 import { Product } from "typings";
-import ImageCell from "./ImageCEll";
+import ImageCell from "./ImageCell.tsx";
 
 export const columns: ColumnDef<Product>[] = [
 	{
