@@ -64,7 +64,7 @@ to render a static image, using this code in the ImageCell.tsx
 
 <br /><br />
 > Note ‼️, If you try to visit the production build here: 
-https://unlimi-one.vercel.app/ - automatic!
+https://unlimi-one.vercel.app/
 It will throw an error with this warning in the console
 ```bash
 index-f5d6d3b6.js:179 Mixed Content: The page at 'https://unlimi-one.vercel.app/' was loaded over HTTPS, but requested an insecure resource 'http://3.88.1.181:8000/products/public/catalog?supplier=FragranceX'. This request has been blocked; the content must be served over HTTPS.
