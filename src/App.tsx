@@ -1,13 +1,33 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 
-function App() {
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+
+function Layout() {
 	return (
 		<main className='wrapper'>
 			<Navbar />
-			<h1 className='text-3xl'>UNLIMI DASHBOARD</h1>
+			<Outlet />
 		</main>
 	);
+}
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Layout />,
+		children: [
+			{
+				path: "/",
+				element: <Dashboard />,
+			},
+		],
+	},
+]);
+
+function App() {
+	return <RouterProvider router={router} />;
 }
 
 export default App;
