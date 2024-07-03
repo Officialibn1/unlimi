@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import { DataProvider } from "./context/ContextProvider";
 
 function Layout() {
 	return (
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	return <RouterProvider router={router} />;
+	return (
+		<DataProvider>
+			<RouterProvider router={router} />
+		</DataProvider>
+	);
 }
 
 export default App;
