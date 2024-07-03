@@ -1,27 +1,65 @@
-# React + TypeScript + Vite
+> # UMLIMI DASHBOARD 🖥️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+> ## Built using 
+* Reactjs
+* Vite
+* Typescript
+* React Router Dom
+* TailwindCSS
+* ShadCN Library
+* Tanstack/react-table
+* Radix UI
+* Lucide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+> ### Steps to run the project on your local repo
+* Clone this repo to your local machine using
+  * ```bash
+    git clone https://github.com/Officialibn1/unlimi.git
+    ``` 
+* Or you can optionally Fork the repo and then clone it to your local repo
+* Open a terminal in the folder
+* Run this command
+  * Install all dependencies with
+  * ```bash
+    npm install
+    ```
+  * Start local server
+  * ```bash
+    npm run dev
+    ```
+  * Build for production using
+  * ```bash
+      npm run build
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+  > There are no environment variables, so everything should work fine with a .env file
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+> ## You might notice that all product images are the same
+This is because of how the img source in been rendered, during development 
+I realized the img url provided from the response data, does not render an image in the component 
+> ImageCell.tsx
+
+rather it breaks, so for a better user experience, I added a conditional fallback
+to render a static image, using this code in the ImageCell.tsx
+```typescript
+   const [imgSrc, setImgSrc] = useState(TableImage);
+
+   useEffect(() => {
+		const img = new Image();
+		img.src = value;
+
+		img.onload = () => setImgSrc(value);
+		img.onerror = () => setImgSrc(TableImage);
+
+		return () => {
+			img.onload = null;
+			img.onerror = null;
+		};
+	}, [value]);
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    
+
