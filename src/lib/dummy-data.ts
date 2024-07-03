@@ -1,4 +1,4 @@
-import { Product } from "@/components/data-table/Columns";
+import { Product } from "typings";
 
 export const products: Product[] = [
 	{

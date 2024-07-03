@@ -1,25 +1,9 @@
 import { ColumnDef } from "@tanstack/react-table";
 
-import TableImage from "../../assets/TableImage.png";
 import { Checkbox } from "../ui/checkbox";
+import { Product } from "typings";
 
-export type Product = {
-	SKU: number;
-	Name: string;
-	Description: string;
-	Brand: string;
-	Title: string;
-	Gender: string;
-	RETAIL: number | null;
-	"Cost Price": number;
-	Image_1: string;
-	URL: string;
-	Quantity: number;
-	size: string;
-	UPC: number | null;
-	catalog_time: string;
-	supplier: string;
-};
+import ImageCell from "./ImageCEll";
 
 export const columns: ColumnDef<Product>[] = [
 	{
@@ -58,11 +42,11 @@ export const columns: ColumnDef<Product>[] = [
 		header: "Image",
 		cell: ({ row }) => {
 			return (
-				<img
-					src={TableImage}
-					style={{ width: "40px", height: "40px" }}
-					// src={row.getValue("Image_1")}
-					alt={row.getValue("SKU")}
+				<ImageCell
+					// src={TableImage}
+
+					value={row.getValue("Image_1")}
+					sku={row.getValue("SKU")}
 				/>
 			);
 		},
