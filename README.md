@@ -35,7 +35,7 @@
       npm run build
     ```
 
-  > There are no environment variables, so everything should work fine with a .env file
+  > There are no environment variables, so everything should work fine without a .env file
 
 <br /><br />
 > ## You might notice that all product images are the same
