@@ -1,0 +1,9 @@
+tbody {
+	border-radius: 10px !important;
+}
+
+table {
+	> tbody {
+		border-radius: 20px !important;
+	}
+}
