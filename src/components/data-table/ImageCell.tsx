@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TableImage from "../../assets/TableImage.png";
 
-const ImageCell: React.FC<{ value: string; sku: string }> = ({
-	value,
-	sku,
-}) => {
+const ImageCell = ({ value, sku }: { value: string; sku: string }) => {
 	const [imgSrc, setImgSrc] = useState(TableImage);
 
 	useEffect(() => {
